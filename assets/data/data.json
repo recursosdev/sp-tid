@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "titulo": "Cabaña 1",
+        "caracteristicas":{},
+        "personalizar":{}
+    },
+    {
+        "id":2,
+        "titulo": "Cabaña 1",
+        "caracteristicas":{},
+        "personalizar":{}
+    }
+]
