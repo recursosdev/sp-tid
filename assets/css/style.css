@@ -72,9 +72,23 @@ body {
 [data-dark] a {
     color: var(--dark-font-color);
 }
-/* envoltorio para aplicar ancho máximo */
-/* .wrap {
-} */
+
+/* generales */
+.boton1{
+    cursor: pointer;
+    color: var(--font-color-a);
+    font-size: 1rem;
+    background-color: var(--color-2);
+    padding-inline: 15px;
+    padding-block: 10px;
+    margin-block: 15px;
+    border: var(--color-3);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.boton1:hover{
+    background-color: var(--color-2);
+}
 
 /* estructura */
 .header {
@@ -411,25 +425,11 @@ body {
     margin-block: 10px;
     gap: 15px;
 }
-.modelos-article__boton {
-    color: var(--font-color-a);
-    font-size: 0.9rem;
-    background-color: var(--color-2);
-    padding-inline: 15px;
-    padding-block: 10px;
-    margin-block: 15px;
-    border: var(--color-3);
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
 
 /* Filtro */
 .modelos-filtro {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-block-end: 20px;
-    gap: 20px;
+    flex-direction: column;
 }
 .modelos-filtro label {
     padding: 5px 10px;
@@ -439,12 +439,9 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.9rem;
-    padding: 10px 10px;
-    color: #fff;
-    background-color: var(--color-3);
-    border: 0;
-    border-radius: 6px;
+}
+.modelos-filtro button img{
+    width:20px;
 }
 .modelos-filtro select {
     font-size: 1rem;
@@ -488,6 +485,15 @@ body {
     .modelos-article__info {
         width: 60%;
     }
+
+.modelos-filtro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-block-end: 20px;
+    gap: 20px;
+}
 }
 
 /* ----------------------------------------- */
@@ -541,18 +547,7 @@ body {
     cursor: pointer;
     width: calc(50% - 5px);
     height: 45px;
-    color: var(--font-color-a);
-    font-size: 1rem;
-    background-color: var(--color-2);
-    padding-inline: 15px;
-    padding-block: 10px;
-    margin-block: 15px;
-    border: var(--color-3);
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-.main-contacto__formulario > div > button:hover {
-    background-color: var(--color-2);
+    
 }
 /* Medias queries */
 @media screen and (min-width: 768px) {

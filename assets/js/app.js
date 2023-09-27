@@ -1,4 +1,4 @@
-import fetchData from "./fetch.js";
+import { render, fetchData } from "./funciones.js";
 import templateInfo from "./templateInfo.js";
 
 // Elemento app CSR
@@ -32,58 +32,63 @@ async function init() {
     const filtros = document.querySelectorAll(
         "#id-modelos-filtro [data-filtro]",
     );
+
+    // botones filtrar y limpiar
     const btnFiltrar = document.getElementById("id-filtrar");
     const btnLimpiar = document.getElementById("id-limpiar");
 
+    // Asignamos un escuchador de eventos al boton filtrar
     btnFiltrar.addEventListener("click", (evento) => {
+        // Se previene el funcionamiento por defecto del formulario
         evento.preventDefault();
+
+        // obtener valores -> utilizacion de asignación desestructurante
         const [dormi, m2] = [...filtros].map((elemento) => {
             return elemento.value;
         });
+
+        // Se verifica que existan las referencias de los filtros
         if (filtros) {
             /*
-            si modelos tiene datos y campo buscar no está vacío
-            filtramos:
+            si modelos tiene datos, filtramos el arreglo
+            y obtenemos uno nuevo
             */
             if (modelos) {
                 modelosFiltrados = modelos.filter((modelo) => {
-                    // console.log(modelo.dormi,Number(dormi),modelo.m2,Number(m2))
+                    /* 
+                    separamos en dos las evaluaciones
+                    y utilizamos un operador ternario
+                    */
                     return dormi > 0
-                        ? modelo.dormi == Number(dormi)
-                        : true && modelo.m2 <= Number(m2);
+                        // si hay cantidad de dormitorios, evaluamos los dos
+                        ? modelo.dormi == Number(dormi) && modelo.m2 <= Number(m2)
+                        // si no, simplemente evaluamos los m2
+                        : modelo.m2 <= Number(m2);
+                    /*
+                    es lo mismo que decir:
+
+                    if(dormi > 0){
+                        return modelo.dormi == Number(dormi) && modelo.m2 <= Number(m2)
+                    }else{
+                        return modelo.m2 <= Number(m2)
+                    }
+                    
+                    */
                 });
             } else {
                 // si no, filtrados tiene todos los datos
                 modelosFiltrados = modelos;
             }
             /*
-        renderizamos con el HTML
-        cada vez que cambia
-        */
-            render(modelosFiltrados);
+            renderizamos con el HTML
+            cada vez que cambia
+            */
+            render(app, modelosFiltrados, templateInfo);
         }
     });
     btnLimpiar.addEventListener("click", () => {
-        render(modelos);
+        render(app, modelos, templateInfo);
     });
     agregarEventos();
 }
 init();
-function agregarEventos() {
-    // const cambioVista = (e) => {
-    //     const modeloId = e.currentTarget.dataset.mid;
-    //     console.log(modeloId);
-    // };
-    // const botonPresupuesto = document.querySelectorAll("[data-mid]");
-    // botonPresupuesto.forEach((evt) => {
-    //     // evt.removeEventListener("click", cambioVista);
-    //     evt.addEventListener("click", cambioVista);
-    // });
-}
-function render(modelos) {
-    app.innerHTML = "";
-    // recorre el arreglo
-    modelos.forEach((modelo) => {
-        app.innerHTML += templateInfo(modelo);
-    });
-}

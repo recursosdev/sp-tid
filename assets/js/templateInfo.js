@@ -50,7 +50,7 @@ const templateInfo = (data) => {
                 />${data.dormi}
             </li>
         </ul>
-        <button data-mid="1" class="modelos-article__boton">
+        <button data-mid="1" class="modelos-article__boton boton1">
             Más información y presupuesto
         </button>
     </div>
