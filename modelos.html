@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Copan | Retiro Sustentable</title>
+    </head>
+    <body>
+        <header class="header general-ancho-max">
+            <div class="header__isologo">
+                <a href="./" class="header__logo-link">
+                    <img
+                        src="assets/images/logo-sustentable.svg"
+                        alt="Logo retiro sustentable"
+                    />
+                </a>
+            </div>
+            <nav class="header__nav">
+                <button class="header__nav-boton-cerrar"></button>
+                <button class="header__nav-boton-abrir"></button>
+                <ul class="header__nav-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="modelos.html">Modelos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main main-modelos">
+            <!-- main -->
+            <h1 class="main-modelos__titulo">Modelos</h1>
+            <p class="main-modelos__desc">
+                Descubra nuestros cinco modelos de cabañas prefabricadas auto
+                sustentables, cada uno diseñado para ofrecer una experiencia
+                única en la naturaleza.
+            </p>
+            <form class="modelos-filtro" id="id-modelos-filtro">
+                <label for="id-dormitorios"
+                    >Dormitorios
+                    <select name="dormitorios" data-filtro="dorm" id="id-dormitorios">
+                        <option value="0">todos</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+                <label for="id-dormitorios"
+                    >min M2
+                    <input data-filtro="m2" type="range" step="5" min="40" max="100" value="40" />
+                </label>
+                <button id="id-filtrar"> <img src="./assets/images/filtro.svg" /> Filtrar</button>
+                <button type="reset">Limpiar</button>
+            </form>
+            <div id="modelos-app">
+                <!-- modelo 1 -->
+                <article class="modelos-article modelos-article--color">
+                    <figure class="modelos-article__imagen">
+                        <img src="./assets/media/c1.jpg" alt="" />
+                    </figure>
+                    <div class="modelos-article__info">
+                        <h2 class="modelos-article__titulo">Colibrí</h2>
+                        <p class="modelos-article_parrafo">
+                            Perfecta para parejas, esta cabaña ofrece una
+                            experiencia íntima en medio de la naturaleza.
+                        </p>
+                        <h3 class="modelos-article__sub-titulo">
+                            Características
+                        </h3>
+                        <ul class="modelos-article__lista">
+                            <li>
+                                <img
+                                    src="./assets/media/sol.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Paneles solares
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/hoja.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Biodigestor
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/agua.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Reciclado de agua
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/m2.svg"
+                                    alt="metros cuadrados"
+                                    aria-hidden="true"
+                                />45 m2
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/cama.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />1
+                            </li>
+                        </ul>
+                        <button data-mid="1" class="modelos-article__boton">
+                            Más información y presupuesto
+                        </button>
+                    </div>
+                </article>
+                <!-- modelo 2 -->
+                <article class="modelos-article">
+                    <figure class="modelos-article__imagen">
+                        <img src="./assets/media/c2.jpg" alt="" />
+                    </figure>
+                    <div class="modelos-article__info">
+                        <h2 class="modelos-article__titulo">Hornero</h2>
+                        <p class="modelos-article_parrafo">
+                            Espaciosa y cómoda, esta cabaña es ideal para
+                            familias o grupos pequeños que desean disfrutar de
+                            la belleza natural.
+                        </p>
+                        <h3 class="modelos-article__sub-titulo">
+                            Características
+                        </h3>
+                        <ul class="modelos-article__lista">
+                            <li>
+                                <img
+                                    src="./assets/media/sol.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Paneles solares
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/hoja.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Biodigestor
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/agua.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Reciclado de agua
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/m2.svg"
+                                    alt="metros cuadrados"
+                                    aria-hidden="true"
+                                />50 m2
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/cama.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />2
+                            </li>
+                        </ul>
+                        <button data-mid="2" class="modelos-article__boton">
+                            Más información y presupuesto
+                        </button>
+                    </div>
+                </article>
+                <!-- modelo 3 -->
+                <article class="modelos-article modelos-article--color">
+                    <figure class="modelos-article__imagen">
+                        <img src="./assets/media/c3.jpg" alt="" />
+                    </figure>
+                    <div class="modelos-article__info">
+                        <h2 class="modelos-article__titulo">Codorniz</h2>
+                        <p class="modelos-article_parrafo">
+                            Ideal para grupos medianos. Diseñada para combinar
+                            la sostenibilidad con el lujo, esta cabaña ofrece
+                            una experiencia única de confort en la naturaleza.
+                        </p>
+                        <h3 class="modelos-article__sub-titulo">
+                            Características
+                        </h3>
+                        <ul class="modelos-article__lista">
+                            <li>
+                                <img
+                                    src="./assets/media/sol.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Paneles solares
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/hoja.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Biodigestor
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/agua.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Reciclado de agua
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/m2.svg"
+                                    alt="metros cuadrados"
+                                    aria-hidden="true"
+                                />55 m2
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/cama.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />2
+                            </li>
+                        </ul>
+                        <button data-mid="3" class="modelos-article__boton">
+                            Más información y presupuesto
+                        </button>
+                    </div>
+                </article>
+
+                <!-- modelo 4 -->
+                <article class="modelos-article">
+                    <figure class="modelos-article__imagen">
+                        <img src="./assets/media/c4.jpg" alt="" />
+                    </figure>
+                    <div class="modelos-article__info">
+                        <h2 class="modelos-article__titulo">Faisán</h2>
+                        <p class="modelos-article_parrafo">
+                            Esta cabaña es perfecta para grupos más grandes que
+                            buscan una experiencia en un entorno natural
+                            excepcional.
+                        </p>
+                        <h3 class="modelos-article__sub-titulo">
+                            Características
+                        </h3>
+                        <ul class="modelos-article__lista">
+                            <li>
+                                <img
+                                    src="./assets/media/sol.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Paneles solares
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/hoja.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Biodigestor
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/agua.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Reciclado de agua
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/m2.svg"
+                                    alt="metros cuadrados"
+                                    aria-hidden="true"
+                                />60 m2
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/cama.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />3
+                            </li>
+                        </ul>
+                        <button data-mid="4" class="modelos-article__boton">
+                            Más información y presupuesto
+                        </button>
+                    </div>
+                </article>
+
+                <!-- modelo 5 -->
+                <article class="modelos-article modelos-article--color">
+                    <figure class="modelos-article__imagen">
+                        <img src="./assets/media/c5.jpg" alt="" />
+                    </figure>
+                    <div class="modelos-article__info">
+                        <h2 class="modelos-article__titulo">Ñandú</h2>
+                        <p class="modelos-article_parrafo">
+                            Una cabaña amplia y elegante que ofrece comodidades
+                            modernas en un entorno natural espectacular.
+                        </p>
+                        <h3 class="modelos-article__sub-titulo">
+                            Características
+                        </h3>
+                        <ul class="modelos-article__lista">
+                            <li>
+                                <img
+                                    src="./assets/media/sol.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Paneles solares
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/hoja.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Biodigestor
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/agua.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />Reciclado de agua
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/m2.svg"
+                                    alt="metros cuadrados"
+                                    aria-hidden="true"
+                                />70 m2
+                            </li>
+                            <li>
+                                <img
+                                    src="./assets/media/cama.svg"
+                                    alt="sol"
+                                    aria-hidden="true"
+                                />4
+                            </li>
+                        </ul>
+                        <button data-mid="5" class="modelos-article__boton">
+                            Más información y presupuesto
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="main-space" aria-hidden="true"></div>
+            <!-- fin main -->
+        </main>
+        <footer class="footer general-ancho-max">
+            <ul class="footer__lista">
+                <li>
+                    <a href="https://instagram.com"
+                        ><img src="./assets/images/ig.svg" alt="Instagram"
+                    /></a>
+                </li>
+                <li>Centro y showroom | +54 9 111111</li>
+                <li class="footer__lista-item">
+                    Desarrollado por
+                    <img
+                        src="./assets/images/logo-copan.svg"
+                        alt="Compan Arquitectura"
+                    />
+                </li>
+            </ul>
+        </footer>
+        <script type="module" src="./assets/js/modelos.js"></script>
+    </body>
+</html>

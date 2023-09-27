@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Copan | Retiro Sustentable</title>
+    </head>
+    <body>
+        <header class="header general-ancho-max">
+            <div class="header__isologo">
+                <a href="./" class="header__logo-link">
+                    <img
+                        src="assets/images/logo-sustentable.svg"
+                        alt="Logo retiro sustentable"
+                    />
+                </a>
+            </div>
+            <nav class="header__nav">
+                <button class="header__nav-boton-cerrar"></button>
+                <button class="header__nav-boton-abrir"></button>
+                <ul class="header__nav-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="modelos.html">Modelos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main main-contacto">
+            <!-- main -->
+            <h1 class="main-contacto__titulo">Contacto</h1>
+            <p class="main-contacto__desc">
+                Descubra nuestros cinco modelos de cabañas prefabricadas auto
+                sustentables, cada uno diseñado para ofrecer una experiencia
+                única en la naturaleza.
+            </p>
+            <form
+                class="main-contacto__formulario"
+                action="./contacto.html"
+                method="post"
+            >
+                <label for="id-nombre">Nombre</label>
+                <input type="text" name="nombre" id="id-nombre" />
+                <label for="id-email">Email</label>
+                <input type="email" name="email" id="id-email" />
+                <label for="id-mensaje">Mensaje</label>
+                <textarea
+                    name="mensaje"
+                    id="id-mensaje"
+                    cols="30"
+                    rows="10"
+                ></textarea>
+                <div>
+                    <button type="reset">Limpiar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+            <div class="main-space" aria-hidden="true"></div>
+            <!-- fin main -->
+        </main>
+        <footer class="footer general-ancho-max">
+            <ul class="footer__lista">
+                <li>
+                    <a href="#"
+                        ><img src="./assets/images/ig.svg" alt="Instagram"
+                    /></a>
+                </li>
+                <li>Centro y showroom | +54 9 111111</li>
+                <li class="footer__lista-item">
+                    Desarrollado por
+                    <img
+                        src="./assets/images/logo-copan.svg"
+                        alt="Compan Arquitectura"
+                    />
+                </li>
+            </ul>
+        </footer>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>

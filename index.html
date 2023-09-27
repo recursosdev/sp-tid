@@ -17,50 +17,59 @@
                 </a>
             </div>
             <nav class="header__nav">
-                <a href="">Inicio</a><a href="">Proyectos</a
-                ><a href="">Contacto</a>
+                <button class="header__nav-boton-cerrar"></button>
+                <button class="header__nav-boton-abrir"></button>
+                <ul class="header__nav-lista">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="modelos.html">Modelos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
             </nav>
         </header>
-        <main class="main main-home general-ancho-max">
-            <figure class="main-home__imagen">
+        <main class="main main-index">
+            <!-- main -->
+            <figure class="main-index__imagen">
                 <img src="./assets/media/cab-1.jpg" alt="Cabaña presentacion" />
             </figure>
-            <section class="main-proyecto">
-                <h2 class="main-proyecto__titulo">Proyecto</h2>
-                <p class="main-proyecto__parrafo">
+            <section class="index-proyecto">
+                <h1 class="index-proyecto__titulo">Proyecto</h1>
+                <p class="index-proyecto__parrafo">
                     En nuestro proyecto de cabañas prefabricadas auto
                     sustentables, hemos fusionado diseño innovador y
                     sostenibilidad para ofrecerle una experiencia única en la
                     naturaleza.
                 </p>
-                <p class="main-proyecto__parrafo">
+                <p class="index-proyecto__parrafo">
                     Nuestras cabañas son la respuesta perfecta para aquellos que
                     buscan un retiro en armonía con el entorno y el medio
                     ambiente.
                 </p>
             </section>
-            <section class="main-desc">
-                <h2 class="main-desc__titulo">Características</h2>
-                <div class="main-desc__bloques">
-                    <div class="main-desc__bloque">
+            <section class="index-desc">
+                <h2 class="index-desc__titulo">Características</h2>
+                <div class="index-desc__bloques">
+                    <div class="index-desc__bloque">
                         <h3>Auto Sustentabilidad</h3>
-                        <figure class="main-desc__fig">
+                        <figure class="index-desc__fig">
                             <img src="./assets/media/sust.jpg" alt="Arbol" />
                         </figure>
-                        <p class="main-desc__parrafo">
+                        <p class="index-desc__parrafo">
                             Nuestras cabañas están diseñadas para funcionar de
                             manera sostenible, utilizando tecnologías avanzadas
                             como paneles solares, biodigestores y tratamiento de
                             agua, reduciendo así su huella ecológica.
                         </p>
                     </div>
-                    <div class="main-desc__bloque main-desc__bloque--bg">
+                    <div class="index-desc__bloque index-desc__bloque--bg">
                         <h3>Modelos Personalizados</h3>
 
-                        <figure class="main-desc__fig">
-                            <img src="./assets/media/pers.jpg" alt="Recorte cabaña" />
+                        <figure class="index-desc__fig">
+                            <img
+                                src="./assets/media/pers.jpg"
+                                alt="Recorte cabaña"
+                            />
                         </figure>
-                        <p class="main-desc__parrafo">
+                        <p class="index-desc__parrafo">
                             Ofrecemos cinco modelos de cabañas prefabricadas,
                             desde acogedoras cabañas de 1 dormitorio hasta
                             amplias cabañas de 3 dormitorios. Cada modelo está
@@ -68,12 +77,15 @@
                             específicas.
                         </p>
                     </div>
-                    <div class="main-desc__bloque">
+                    <div class="index-desc__bloque">
                         <h3>Confort y estylo</h3>
-                        <figure class="main-desc__fig">
-                            <img src="./assets/media/conf.jpg" alt="Revestimiento madera" />
+                        <figure class="index-desc__fig">
+                            <img
+                                src="./assets/media/conf.jpg"
+                                alt="Revestimiento madera"
+                            />
                         </figure>
-                        <p class="main-desc__parrafo">
+                        <p class="index-desc__parrafo">
                             En el interior, encontrará una cocina comedor
                             completamente equipada y baños modernos para una
                             estancia cómoda y placentera.
@@ -81,9 +93,8 @@
                     </div>
                 </div>
             </section>
-            <div class="main-space" aria-hidden="true">
-
-            </div>
+            <div class="main-space" aria-hidden="true"></div>
+            <!-- fin main -->
         </main>
         <footer class="footer general-ancho-max">
             <ul class="footer__lista">
@@ -102,5 +113,6 @@
                 </li>
             </ul>
         </footer>
+        <script type="module" src="./main.js"></script>
     </body>
 </html>
