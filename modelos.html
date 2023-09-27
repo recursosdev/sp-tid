@@ -37,7 +37,11 @@
             <form class="modelos-filtro" id="id-modelos-filtro">
                 <label for="id-dormitorios"
                     >Dormitorios
-                    <select name="dormitorios" data-filtro="dorm" id="id-dormitorios">
+                    <select
+                        name="dormitorios"
+                        data-filtro="dorm"
+                        id="id-dormitorios"
+                    >
                         <option value="0">todos</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -46,11 +50,23 @@
                     </select>
                 </label>
                 <label for="id-dormitorios"
-                    >min M2
-                    <input data-filtro="m2" type="range" step="5" min="40" max="100" value="40" />
+                    >max
+                    <input
+                        id="id-rango-m2"
+                        data-filtro="m2"
+                        type="range"
+                        step="5"
+                        min="40"
+                        max="100"
+                        value="100"
+                    /><span class="modelos-filtro__info-m2" id="id-max-m2"
+                        >100</span
+                    >M2
                 </label>
-                <button id="id-filtrar"> <img src="./assets/images/filtro.svg" /> Filtrar</button>
-                <button type="reset">Limpiar</button>
+                <button id="id-filtrar">
+                    <img src="./assets/images/filtro.svg" /> Filtrar
+                </button>
+                <button id="id-limpiar" type="reset">Limpiar</button>
             </form>
             <div id="modelos-app">
                 <!-- modelo 1 -->
@@ -339,7 +355,7 @@
                     </div>
                 </article>
             </div>
-
+            <aside class="popup"></aside>
             <div class="main-space" aria-hidden="true"></div>
             <!-- fin main -->
         </main>
@@ -360,6 +376,6 @@
                 </li>
             </ul>
         </footer>
-        <script type="module" src="./assets/js/modelos.js"></script>
+        <script type="module" src="./assets/js/app.js"></script>
     </body>
 </html>
