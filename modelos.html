@@ -4,9 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <script type="module" src="./assets/js/app.js"></script>
         <title>Copan | Retiro Sustentable</title>
     </head>
     <body>
+        <!-- cabecera -->
         <header class="header general-ancho-max">
             <div class="header__isologo">
                 <a href="./" class="header__logo-link">
@@ -26,8 +28,8 @@
                 </ul>
             </nav>
         </header>
+        <!-- main -->
         <main class="main main-modelos">
-            <!-- main -->
             <h1 class="main-modelos__titulo">Modelos</h1>
             <p class="main-modelos__desc">
                 Descubra nuestros cinco modelos de cabañas prefabricadas auto
@@ -63,10 +65,12 @@
                         >100</span
                     >M2
                 </label>
-                <button class="boton1"  id="id-filtrar">
+                <button class="boton-oscuro" id="id-filtrar">
                     <img src="./assets/images/filtro.svg" /> Filtrar
                 </button>
-                <button class="boton1"  id="id-limpiar" type="reset">Limpiar</button>
+                <button class="boton-claro" id="id-limpiar" type="reset">
+                    Limpiar
+                </button>
             </form>
             <div id="modelos-app">
                 <!-- modelo 1 -->
@@ -120,8 +124,11 @@
                                 />1
                             </li>
                         </ul>
-                        <button data-mid="1" class="modelos-article__boton boton1">
-                            Más información y presupuesto
+                        <button
+                            data-mid="1"
+                            class="modelos-article__boton boton-oscuro"
+                        >
+                            Presupuesto
                         </button>
                     </div>
                 </article>
@@ -177,8 +184,11 @@
                                 />2
                             </li>
                         </ul>
-                        <button data-mid="2" class="modelos-article__boton boton1">
-                            Más información y presupuesto
+                        <button
+                            data-mid="2"
+                            class="modelos-article__boton boton-oscuro"
+                        >
+                            Presupuesto
                         </button>
                     </div>
                 </article>
@@ -234,8 +244,11 @@
                                 />2
                             </li>
                         </ul>
-                        <button data-mid="3" class="modelos-article__boton boton1">
-                            Más información y presupuesto
+                        <button
+                            data-mid="3"
+                            class="modelos-article__boton boton-oscuro"
+                        >
+                            Presupuesto
                         </button>
                     </div>
                 </article>
@@ -292,8 +305,11 @@
                                 />3
                             </li>
                         </ul>
-                        <button data-mid="4" class="modelos-article__boton boton1">
-                            Más información y presupuesto
+                        <button
+                            data-mid="4"
+                            class="modelos-article__boton boton-oscuro"
+                        >
+                            Presupuesto
                         </button>
                     </div>
                 </article>
@@ -349,16 +365,19 @@
                                 />4
                             </li>
                         </ul>
-                        <button data-mid="5" class="modelos-article__boton boton1">
-                            Más información y presupuesto
+                        <button
+                            data-mid="5"
+                            class="modelos-article__boton boton-oscuro"
+                        >
+                            Presupuesto
                         </button>
                     </div>
                 </article>
             </div>
-            <aside class="popup"></aside>
+            <div class="popup-overlay" id="popup-caracteristicas"></div>
             <div class="main-space" aria-hidden="true"></div>
-            <!-- fin main -->
         </main>
+        <!-- pie -->
         <footer class="footer general-ancho-max">
             <ul class="footer__lista">
                 <li>
@@ -376,6 +395,5 @@
                 </li>
             </ul>
         </footer>
-        <script type="module" src="./assets/js/app.js"></script>
     </body>
 </html>

@@ -4,9 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <script type="module" src="./assets/js/contacto.js"></script>
         <title>Copan | Retiro Sustentable</title>
     </head>
     <body>
+        <!-- cabecera -->
         <header class="header general-ancho-max">
             <div class="header__isologo">
                 <a href="./" class="header__logo-link">
@@ -26,38 +28,46 @@
                 </ul>
             </nav>
         </header>
+        <!-- main -->
         <main class="main main-contacto">
-            <!-- main -->
             <h1 class="main-contacto__titulo">Contacto</h1>
             <p class="main-contacto__desc">
-                Descubra nuestros cinco modelos de cabañas prefabricadas auto
-                sustentables, cada uno diseñado para ofrecer una experiencia
-                única en la naturaleza.
+                Escríbanos o llámenos al teléfono +54 9 111111. Estaremos para
+                asesorarles y coordinar una cita para visitar el showroom.
             </p>
-            <form
-                class="main-contacto__formulario"
-                action="./contacto.html"
-                method="post"
-            >
+            <div
+                class="main-contaco__mensaje"
+                id="id-contacto-dialogo"
+                role="alert"
+            ></div>
+            <form class="main-contacto__formulario" id="id-form-contacto">
                 <label for="id-nombre">Nombre</label>
-                <input type="text" name="nombre" id="id-nombre" />
+                <input
+                    type="text"
+                    name="nombre"
+                    id="id-nombre"
+                    minlength="3"
+                    required
+                />
                 <label for="id-email">Email</label>
-                <input type="email" name="email" id="id-email" />
+                <input type="email" name="email" id="id-email" required />
                 <label for="id-mensaje">Mensaje</label>
                 <textarea
                     name="mensaje"
                     id="id-mensaje"
                     cols="30"
                     rows="10"
+                    minlength="3"
+                    required
                 ></textarea>
                 <div>
-                    <button class="boton1" type="reset">Limpiar</button>
-                    <button class="boton1" type="submit">Enviar</button>
+                    <button class="boton-claro" type="reset">Limpiar</button>
+                    <button class="boton-oscuro" type="submit">Enviar</button>
                 </div>
             </form>
             <div class="main-space" aria-hidden="true"></div>
-            <!-- fin main -->
         </main>
+        <!-- pie -->
         <footer class="footer general-ancho-max">
             <ul class="footer__lista">
                 <li>

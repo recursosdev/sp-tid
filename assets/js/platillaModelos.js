@@ -1,4 +1,4 @@
-const templateInfo = (data) => {
+const templateInfoModelos = (data) => {
     return `<article
     class="modelos-article modelos-article--color"
 >
@@ -50,10 +50,10 @@ const templateInfo = (data) => {
                 />${data.dormi}
             </li>
         </ul>
-        <button data-mid="1" class="modelos-article__boton boton1">
-            Más información y presupuesto
+        <button data-mid="${data.id}" class="modelos-article__boton boton-oscuro">
+            Presupuesto
         </button>
     </div>
 </article>`;
 };
-export default templateInfo;
+export default templateInfoModelos;

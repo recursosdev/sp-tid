@@ -10,17 +10,26 @@ Layout
 
 /* raiz */
 :root {
-    /* color-scheme: light dark; */
-    --dark-background-color: #222222;
-    --dark-font-color: #eeeeee;
-    --dark-font-color-a: #eeeeee;
     /* paleta general */
-    --color-2: #2b1f1f;
-    --color-3: #544343;
+    --color-oscuro1: #2b1f1f;
+    --color-oscuro2: #544343;
+    /* botones */
+    --boton1-color-fuente: #eeeeee;
+    --boton1-color-fondo: #2b1f1f;
+    --boton1-color-fondo-sobre: #544343;
+    --boton2-color-fuente: #2b1f1f;
+    --boton2-color-fondo: #eeeeee;
+    --boton2-color-fondo-sobre: #d0d0d0;
+    /* mensajes */
+    --fuente-mensaje-exito: #222222;
+    --fondo-mensaje-exito: #75ffdd;
+    --fuente-mensaje-error: #eeeeee;
+    --fondo-mensaje-error: #f38b62;
     /* fonts */
     --font-size: 20px;
     line-height: calc(var(--font-size) * 1.5);
-    --font-color-a: #ffffff;
+    --color-fuente-claro: #ffffff;
+    --color-fuente-oscuro: #2b1f1f;
     font-family: "NotoSans-Regular";
     font-size: var(--font-size);
 }
@@ -63,33 +72,34 @@ body {
     height: 100%;
 }
 
-/* tema oscuro */
-[data-dark] {
-    color: var(--dark-font-color);
-    background-color: var(--dark-background-color);
-}
-
-[data-dark] a {
-    color: var(--dark-font-color);
-}
-
 /* generales */
-.boton1{
+.boton-oscuro,
+.boton-claro {
     cursor: pointer;
-    color: var(--font-color-a);
     font-size: 1rem;
-    background-color: var(--color-2);
     padding-inline: 15px;
     padding-block: 10px;
     margin-block: 15px;
-    border: var(--color-3);
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.boton1:hover{
-    background-color: var(--color-2);
+.boton-oscuro {
+    color: var(--boton1-color-fuente);
+    background-color: var(--boton1-color-fondo);
+    border: 1px solid var(--boton2-color-fondo);
+}
+.boton-oscuro:hover {
+    background-color: var(--boton1-color-fondo-sobre);
 }
 
+.boton-claro {
+    color: var(--boton2-color-fuente);
+    background-color: var(--boton2-color-fondo);
+    border: 1px solid var(--boton1-color-fondo);
+}
+.boton-claro:hover {
+    background-color: var(--boton2-color-fondo-sobre);
+}
 /* estructura */
 .header {
     display: flex;
@@ -97,7 +107,7 @@ body {
     top: 0;
     justify-content: space-between;
     min-height: 80px;
-    background-color: var(--color-2);
+    background-color: var(--color-oscuro1);
     padding-inline: 10px;
 }
 .header__isologo {
@@ -124,9 +134,14 @@ body {
 }
 .header__nav-lista {
     display: none;
-    background-color: var(--color-2);
+    background-color: var(--color-oscuro1);
     flex-direction: column;
     gap: 10px;
+}
+.header__nav-lista > li > a {
+    text-decoration: none;
+    color: var(--color-fuente-claro);
+    padding-inline-start: 15px;
 }
 .header__nav-boton-abrir,
 .header__nav-boton-cerrar {
@@ -148,9 +163,9 @@ body {
 }
 
 /* 
- lo indicamos solamente para moviles
- de esta manera por su complejidad
- de interaccion y que no sea por defecto
+ lo indicamos solamente para moviles,
+ ya que, por su complejidad
+ de interaccion, no sea por defecto
  */
 @media (max-width: 767px) {
     /* interaccion con mouse */
@@ -181,12 +196,6 @@ body {
     }
 }
 
-.header__nav-lista > li > a {
-    text-decoration: none;
-    color: var(--font-color-a);
-    padding-inline-start: 15px;
-}
-
 /* espacio blanco */
 .main-space {
     display: block;
@@ -200,8 +209,8 @@ body {
     justify-content: center;
     align-items: center;
     justify-content: baseline;
-    background-color: var(--color-3);
-    border-top: 1px solid var(--color-2);
+    background-color: var(--color-oscuro2);
+    border-top: 1px solid var(--color-oscuro1);
     padding-inline: 10%;
     padding-block: 10px;
 }
@@ -213,11 +222,11 @@ body {
     font-size: 0.9rem; /* relativo al tamaño fuente en raiz */
     text-align: center;
     list-style: none;
-    color: var(--font-color-a);
+    color: var(--color-fuente-claro);
     padding-block: 20px;
     /****/
     a {
-        color: var(--font-color-a);
+        color: var(--color-fuente-claro);
     }
 }
 .footer__lista-item {
@@ -287,8 +296,8 @@ body {
     text-align: center;
     margin-block: 40px 40px;
     padding-block: 25px;
-    border-top: 1px solid var(--color-3);
-    border-bottom: 1px solid var(--color-3);
+    border-top: 1px solid var(--color-oscuro1);
+    border-bottom: 1px solid var(--color-oscuro1);
 }
 .index-proyecto__parrafo {
     text-align: center;
@@ -381,8 +390,8 @@ body {
     text-align: center;
     margin-block: 40px 40px;
     padding-block: 25px;
-    border-top: 1px solid var(--color-3);
-    border-bottom: 1px solid var(--color-3);
+    border-top: 1px solid var(--color-oscuro1);
+    border-bottom: 1px solid var(--color-oscuro1);
 }
 .main-modelos__desc {
     text-align: center;
@@ -430,6 +439,7 @@ body {
 .modelos-filtro {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 .modelos-filtro label {
     padding: 5px 10px;
@@ -440,8 +450,8 @@ body {
     align-items: center;
     gap: 10px;
 }
-.modelos-filtro button img{
-    width:20px;
+.modelos-filtro button img {
+    width: 20px;
 }
 .modelos-filtro select {
     font-size: 1rem;
@@ -452,18 +462,6 @@ body {
     display: inline-block;
     text-align: right;
     width: 50px;
-}
-/* popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 5%;
-    right: 5%;
-    background-color: var(--color-3);
-    width: 90%;
-    height: 100%;
-    z-index: 99;
 }
 /* Medias queries */
 @media screen and (min-width: 768px) {
@@ -486,18 +484,18 @@ body {
         width: 60%;
     }
 
-.modelos-filtro {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-block-end: 20px;
-    gap: 20px;
-}
+    .modelos-filtro {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-block-end: 20px;
+        gap: 20px;
+    }
 }
 
 /* ----------------------------------------- */
-/* contacto.html ****************************** */
+/* contacto.html *************************** */
 /* ----------------------------------------- */
 
 .main-contacto {
@@ -507,12 +505,28 @@ body {
     text-align: center;
     margin-block: 40px 40px;
     padding-block: 25px;
-    border-top: 1px solid var(--color-3);
-    border-bottom: 1px solid var(--color-3);
+    border-top: 1px solid var(--color-oscuro1);
+    border-bottom: 1px solid var(--color-oscuro1);
 }
 .main-contacto__desc {
     text-align: center;
     padding-block: 10px 40px;
+}
+.main-contaco__mensaje {
+    display: none;
+    text-align: center;
+    padding-inline: 20px;
+    padding-block: 15px;
+}
+.main-contaco__mensaje.exito {
+    display: block;
+    color: var(--fuente-mensaje-exito);
+    background-color: var(--fondo-mensaje-exito);
+}
+.main-contaco__mensaje.error {
+    display: block;
+    color: var(--fuente-mensaje-error);
+    background-color: var(--fondo-mensaje-error);
 }
 .main-contacto__formulario {
     display: flex;
@@ -535,7 +549,7 @@ body {
     font-family: inherit;
     padding-inline: 5px;
     padding-block: 10px;
-    height: 300px;
+    height: 150px;
     margin-block-end: 10px;
 }
 .main-contacto__formulario > div {
@@ -547,7 +561,6 @@ body {
     cursor: pointer;
     width: calc(50% - 5px);
     height: 45px;
-    
 }
 /* Medias queries */
 @media screen and (min-width: 768px) {
@@ -559,5 +572,141 @@ body {
     }
     .main-contacto__formulario {
         width: 60%;
+    }
+}
+
+/* ----------------------------------------- */
+/* Popup *********************************** */
+/* ----------------------------------------- */
+.popup-overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    padding-block: 10px;
+    padding-inline: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 999;
+}
+.popup {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-oscuro2);
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    min-height: 800px;
+    overflow: hidden;
+}
+.popup__top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-inline: 10px;
+    height: 45px;
+}
+.popup__btn-cerrar {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    > img {
+        object-fit: cover;
+        width: 35px;
+        height: 35px;
+    }
+}
+.popup__contenido {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.popup__contenido-dentro {
+    padding-block: 10px;
+    padding-inline: 10px;
+}
+.popup__titulo {
+    margin-block-end: 20px;
+}
+.popup__sub-titulo {
+    margin-block-end: 5px;
+}
+.popup__parrafo {
+    margin-block-end: 25px;
+}
+.popup__formulario {
+    display: flex;
+    flex-direction: column;
+}
+.popup__formulario label {
+    margin-block: 15px 10px;
+}
+.popup__formulario li > label:hover {
+    cursor: pointer;
+    color: #544343;
+    background-color: #eee;
+}
+.popup__formulario input,
+.popup__formulario textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding-inline: 5px;
+    padding-block: 5px;
+    border: 0;
+}
+.popup__formulario textarea {
+    height: 120px;
+}
+.popup__mensaje-enviado {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 25px;
+    height: 100%;
+}
+.popup__mensaje-enviado img {
+    margin-block-end: 30px;
+    width: 60px;
+}
+.popup__progreso {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 3px;
+    border: 0;
+    margin-block: 15px;
+}
+.popup__progreso::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border: 0;
+    background-color: #eeeeee;
+    animation: progreso 10s;
+}
+@keyframes progreso {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+@media (min-width: 768px) {
+    .popup__contenido-dentro {
+        padding-inline: 10%;
     }
 }
