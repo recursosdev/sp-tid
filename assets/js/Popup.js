@@ -58,7 +58,7 @@ export default class Popup {
             evt.preventDefault();
 
             const datos = new FormData(formulario);
-            const respuestaServidor = await fetch("./", {
+            const respuestaServidor = await fetch("./modelos.html", {
                 method: "post",
                 body: datos,
             });

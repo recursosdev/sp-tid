@@ -15,7 +15,7 @@ const mensajes = {
 };
 
 // URL envío
-const urlEnvioFormulario = "./";
+const urlEnvioFormulario = "./contacto.html";
 
 // Asignamos escuchador "submit" al formulario
 // se dispara cuando se envía

@@ -1,13 +1,13 @@
 {
   "name": "sp-tid",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desarrollo Aplicación Web Ejemplo AW1",
   "main": "index.js",
   "scripts": {
     "start": "five-server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Andrés Senn",
+  "license": "MIT",
   "devDependencies": {
     "five-server": "^0.3.1"
   }
