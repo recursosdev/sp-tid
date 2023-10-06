@@ -75,7 +75,6 @@ export default class Popup {
 
             timeoutId = setTimeout(() => {
                 this.cerrarPopup();
-                console.log("close");
             }, 10000);
         });
     }

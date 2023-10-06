@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="268.86685"
+   height="268.93985"
+   viewBox="0 0 268.86685 268.93986"
+   version="1.1"
+   id="svg3671"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3668">
+    <linearGradient
+       id="linearGradient4558">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4554" />
+      <stop
+         style="stop-color:#00aa44;stop-opacity:1"
+         offset="0.36893982"
+         id="stop6504" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.62745098;"
+         offset="0.49352545"
+         id="stop5176" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.50588235;"
+         offset="0.49352545"
+         id="stop4852" />
+      <stop
+         style="stop-color:#d4aa00;stop-opacity:1"
+         offset="0.61176026"
+         id="stop5110" />
+      <stop
+         style="stop-color:#808080;stop-opacity:1"
+         offset="1"
+         id="stop4556" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient4558"
+       id="linearGradient4560"
+       x1="181.34181"
+       y1="300.09146"
+       x2="180.17647"
+       y2="36.133846"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-180.05872,-38.844073)"
+     style="fill:#ffb380">
+    <g
+       id="g10214"
+       transform="matrix(2.6045158,0,0,2.6045158,-6.1660585,-17.119237)"
+       style="fill:#ffb380" />
+    <path
+       id="circle3624"
+       style="fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:7.25834;stroke-linecap:round;paint-order:markers stroke fill"
+       d="M 216.52123,81.170882 C 182.8106,117.05804 171.40916,168.49964 186.7998,215.26953 c 7.11413,-7.43404 16.56243,-17.165 29.07881,-29.89115 87.35119,-112.9669 149.35269,17.05366 197.95515,25.06832 9.1672,2.00608 19.36084,1.9603 29.65429,0.69981 14.24909,-48.59184 -0.008,-101.06846 -36.8864,-135.769793 C 352.51236,24.487526 267.4105,27.081661 216.52123,81.170882 Z m 41.15892,130.669098 -44.28404,50.07169 c 2.8218,3.25427 5.79832,6.37107 8.91928,9.33964 54.0893,50.88917 139.19114,48.29502 190.0804,-5.7942 0.92191,-1.02792 1.82794,-2.06998 2.71775,-3.12581 -26.75181,-3.6828 -46.89594,-15.46661 -58.35101,-21.73937 -33.19549,-22.79444 -28.47233,-22.44106 -49.51996,-36.03575 -20.84655,-13.46481 -33.33058,-9.66394 -49.56245,7.28378 -10e-6,1e-5 3e-5,2e-5 3e-5,2e-5 z" />
+  </g>
+</svg>
