@@ -75,8 +75,8 @@
                         min="40"
                         max="100"
                         value="100"
-                    /><span class="modelos-filtro__info-m2" id="id-max-m2"
-                        >100</span
+                    /><output class="modelos-filtro__info-m2" id="id-max-m2" for="id-rango-m2" form="id-modelos-filtro"
+                        >100</output
                     >M2
                 </label>
                 <button class="boton-oscuro" id="id-filtrar">
@@ -86,7 +86,7 @@
                     Limpiar
                 </button>
             </form>
-            <div id="modelos-app">
+            <div id="modelos-app" aria-live="polite">
                 <!-- modelo 1 -->
                 <article class="modelos-article modelos-article--color">
                     <figure class="modelos-article__imagen">
@@ -388,7 +388,7 @@
                     </div>
                 </article>
             </div>
-            <div class="popup-overlay" id="popup-caracteristicas"></div>
+            <div class="popup-overlay" id="popup-caracteristicas" aria-live="polite"></div>
             <div class="main-space" aria-hidden="true"></div>
         </main>
         <!-- pie -->

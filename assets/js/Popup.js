@@ -109,8 +109,7 @@ export default class Popup {
         // Retornamos el template con sus datos
         return (
             /* html */
-            `<aside class="popup" 
-            role="dialog"
+            `<dialog class="popup" 
             aria-labelledby="Pedir presupuesto"
             aria-describedby="Formulario de presupuesto">
                 <div class="popup__top-bar">
@@ -157,7 +156,7 @@ export default class Popup {
                             <button class="boton-oscuro" type="submit">Presupuestar</button>
                         </form>
                 </div>
-            </aside>
+            </dialog>
         `
         );
     }

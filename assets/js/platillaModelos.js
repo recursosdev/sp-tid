@@ -40,7 +40,7 @@ const templateInfoModelos = (data) => {
                     src="./assets/media/m2.svg"
                     alt="Metros cuadrados"
                     aria-hidden="true"
-                />${data.m2}
+                />${data.m2} m2
             </li>
             <li>
                 <img
