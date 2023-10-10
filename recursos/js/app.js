@@ -12,9 +12,9 @@ async function initApp() {
     y características desde API
     */
     let modelos;
-    const urlModelos = "/assets/data/modelos.json";
+    const urlModelos = "/recursos/datos/modelos.json";
     let caracteristicas;
-    const urlCaracteristicas = "/assets/data/caracteristicas.json";
+    const urlCaracteristicas = "/recursos/datos/caracteristicas.json";
 
     // Elemento HTML que va a contener el popup
     const elementoPopup = document.getElementById("popup-caracteristicas");
@@ -75,7 +75,9 @@ async function initApp() {
         // Se previene el funcionamiento por defecto del formulario
         evento.preventDefault();
 
-        // obtener valores -> utilizacion de asignación desestructurante
+          // Obtener valores con un spread creando un Array de Nodelist
+        // [...filtros] y luego recorrerlo como Array de elementos
+        // y obtener los valores utilizacion de asignación desestructurante
         const [dormi, m2] = [...filtros].map((elemento) => {
             return elemento.value;
         });

@@ -16,36 +16,36 @@ const templateInfoModelos = (data) => {
         <ul class="modelos-article__lista">
             <li>
                 <img
-                    src="./assets/media/sol.svg"
+                    src="./recursos/imagenes/sol.svg"
                     alt="sol"
                     aria-hidden="true"
                 />Paneles solares
             </li>
             <li>
                 <img
-                    src="./assets/media/hoja.svg"
-                    alt="sol"
+                    src="./recursos/imagenes/hoja.svg"
+                    alt="hoja"
                     aria-hidden="true"
                 />Biodigestor
             </li>
             <li>
                 <img
-                    src="./assets/media/agua.svg"
-                    alt="sol"
+                    src="./recursos/imagenes/agua.svg"
+                    alt="agua"
                     aria-hidden="true"
                 />Reciclado de agua
             </li>
             <li>
                 <img
-                    src="./assets/media/m2.svg"
+                    src="./recursos/imagenes/m2.svg"
                     alt="Metros cuadrados"
                     aria-hidden="true"
                 />${data.m2} m2
             </li>
             <li>
                 <img
-                    src="./assets/media/cama.svg"
-                    alt="sol"
+                    src="./recursos/imagenes/cama.svg"
+                    alt="cama"
                     aria-hidden="true"
                 />${data.dormi}
             </li>

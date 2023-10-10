@@ -17,11 +17,11 @@ export default class Popup {
 
         // Mensajes
         this.mensajes = {
-            [this.tipoMensaje.ENVIADO]: `<img src="./assets/images/check.svg" alt="check" /> 
+            [this.tipoMensaje.ENVIADO]: `<img src="./recursos/imagenes/check.svg" alt="check" /> 
             Gracias por la consulta, en breve le estaremos enviando a su email todos los datos requeridos.`,
-            [this.tipoMensaje.CONEXION]: `<img src="./assets/images/sin-conexion.svg" alt="sin conexion" /> 
+            [this.tipoMensaje.CONEXION]: `<img src="./recursos/imagenes/sin-conexion.svg" alt="sin conexion" /> 
             No tiene conexión a internet.`,
-            [this.tipoMensaje.ERROR]: `<img src="./assets/images/error.svg" alt="error" />
+            [this.tipoMensaje.ERROR]: `<img src="./recursos/imagenes/error.svg" alt="error" />
             Hubo un error en el envío, intente nuevamente.`,
         };
     }
@@ -115,7 +115,7 @@ export default class Popup {
                 <div class="popup__top-bar">
                     <button class="popup__btn-cerrar" id="btn-cerrar-popup">
                         <img
-                            src="./assets/images/cerrar.svg"
+                            src="./recursos/imagenes/cerrar.svg"
                             alt="Cerrar popup"
                         />
                     </button>

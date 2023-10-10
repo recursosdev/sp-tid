@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Colibrí",
         "descrip": "Perfecta para parejas, esta cabaña ofrece una experiencia íntima en medio de la naturaleza.",
-        "imagen": "/assets/media/c1.jpg",
+        "imagen": "/recursos/media/c1.jpg",
         "dormi": 1,
         "m2": 45
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "nombre": "Hornero",
         "descrip": "Espaciosa y cómoda, esta cabaña es ideal para familias o grupos pequeños que desean disfrutar de la belleza natural.",
-        "imagen": "/assets/media/c2.jpg",
+        "imagen": "/recursos/media/c2.jpg",
         "dormi": 2,
         "m2": 50
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "nombre": "Codorniz",
         "descrip": "Esta cabaña es perfecta para grupos más grandes que buscan una experiencia en un entorno natural excepcional.",
-        "imagen": "/assets/media/c3.jpg",
+        "imagen": "/recursos/media/c3.jpg",
         "dormi": 2,
         "m2": 55
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "nombre": "Faisán",
         "descrip": "Ideal para grupos medianos. Diseñada para combinar la sostenibilidad con el lujo, esta cabaña ofrece una experiencia única de confort en la naturaleza.",
-        "imagen": "/assets/media/c4.jpg",
+        "imagen": "/recursos/media/c4.jpg",
         "dormi": 3,
         "m2": 60
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "nombre": "Ñandú",
         "descrip": "Una cabaña amplia y elegante que ofrece comodidades modernas en un entorno natural espectacular.",
-        "imagen": "/assets/media/c5.jpg",
+        "imagen": "/recursos/media/c5.jpg",
         "dormi": 4,
         "m2": 70
     }

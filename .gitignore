@@ -1,5 +1,6 @@
 node_modules/
 plantilla/
 plantilla/*
+componentes/
 *.zip
 *.rar
