@@ -1,6 +1,11 @@
-const templateInfoModelos = (data) => {
+const templateInfoModelos = (data, i = 0) => {
+    let colorFondoAlternado = "";
+    if (i % 2 === 0) {
+        colorFondoAlternado = "modelos-article--color";
+    }
+
     return `<article
-    class="modelos-article modelos-article--color"
+    class="modelos-article ${colorFondoAlternado}"
 >
     <figure class="modelos-article__imagen">
         <img src="${data.imagen}" alt="" />

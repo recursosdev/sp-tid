@@ -12,9 +12,9 @@ async function initApp() {
     y características desde API
     */
     let modelos;
-    const urlModelos = "/recursos/datos/modelos.json";
+    const urlModelos = "./recursos/datos/modelos.json";
     let caracteristicas;
-    const urlCaracteristicas = "/recursos/datos/caracteristicas.json";
+    const urlCaracteristicas = "./recursos/datos/caracteristicas.json";
 
     // Elemento HTML que va a contener el popup
     const elementoPopup = document.getElementById("popup-caracteristicas");

@@ -25,8 +25,10 @@ ver modulo -> templateInfo
 export const render = (app, modelos, template) => {
     app.innerHTML = "";
     // recorre el arreglo
-    modelos.forEach((modelo) => {
-        app.innerHTML += template(modelo);
+    modelos.forEach((modelo, i) => {
+        // El parámetro i (index) se utiliza solamente para pintar el fondo alternadamente
+        // ver -> platillaModelos.js
+        app.innerHTML += template(modelo, i);
     });
 };
 /**
