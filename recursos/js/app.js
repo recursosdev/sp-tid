@@ -29,8 +29,8 @@ async function initApp() {
     if (!modelos) {
         // cargamos los modelos
         modelos = await fetchData(urlModelos);
-        sessionStorage.setItem("modelos", JSON.stringify(modelos))
-    }else{
+        sessionStorage.setItem("modelos", JSON.stringify(modelos));
+    } else {
         modelos = JSON.parse(sessionStorage.getItem("modelos"));
     }
 
@@ -38,8 +38,11 @@ async function initApp() {
     if (!caracteristicas) {
         // cargamos los modelos
         caracteristicas = await fetchData(urlCaracteristicas);
-        sessionStorage.setItem("caracteristicas", JSON.stringify(caracteristicas))
-    }else{
+        sessionStorage.setItem(
+            "caracteristicas",
+            JSON.stringify(caracteristicas),
+        );
+    } else {
         caracteristicas = JSON.parse(sessionStorage.getItem("caracteristicas"));
     }
 
@@ -67,15 +70,17 @@ async function initApp() {
 
     // botones filtrar y limpiar
     const btnFiltrar = document.getElementById("id-filtrar");
+    // Se guarda el contenido del boton para luego modificarlo
+    // y tener un estado previo a la modificación
+    const btnFiltrarLeyenda = btnFiltrar.innerHTML;
     const btnLimpiar = document.getElementById("id-limpiar");
 
     // Asignamos un escuchador de eventos al boton filtrar
     btnFiltrar.addEventListener("click", (evento) => {
-
         // Se previene el funcionamiento por defecto del formulario
         evento.preventDefault();
 
-          // Obtener valores con un spread creando un Array de Nodelist
+        // Obtener valores con un spread creando un Array de Nodelist
         // [...filtros] y luego recorrerlo como Array de elementos
         // y obtener los valores utilizacion de asignación desestructurante
         const [dormi, m2] = [...filtros].map((elemento) => {
@@ -84,16 +89,13 @@ async function initApp() {
 
         // Se verifica que existan las referencias de los filtros
         if (filtros) {
-
             /*
             si modelos tiene datos, filtramos el arreglo
             y obtenemos uno nuevo
             */
             if (modelos) {
-
                 // array.filter() -> devuelve solo los elementos que cumplen la condición verdadera
                 modelosFiltrados = modelos.filter((modelo) => {
-
                     /* 
                     separamos en dos las evaluaciones
                     y utilizamos un operador ternario
@@ -117,11 +119,9 @@ async function initApp() {
                     */
                 });
             } else {
-
                 // si no, filtrados tiene todos los datos
                 modelosFiltrados = modelos;
             }
-
             /*
             renderizamos con el HTML
             cada vez que se filtra
@@ -131,17 +131,21 @@ async function initApp() {
 
         // Cada vez que filtramos debemos volver a asignar al boton
         eventoBotonesPresupuesto(popup, caracteristicas, modelosFiltrados);
+        // cambiamos leyenda agregamos cantidad de modelos encontrados
+        btnFiltrar.innerHTML = `${btnFiltrarLeyenda} (${modelosFiltrados.length})`;
     });
 
     // Asignamos escuchador al boton limpiar
     btnLimpiar.addEventListener("click", () => {
-
         // Reseteamos los m2
         rangoInfo.textContent = rangoM2.max;
         render(app, modelos, platillaModelos);
 
         // Cada vez que filtramos debemos volver a asignar eventos
         eventoBotonesPresupuesto(popup, caracteristicas, modelosFiltrados);
+
+        // Leyenda del boton
+        btnFiltrar.innerHTML = btnFiltrarLeyenda;
     });
 
     // asignamo evento al boton "Presupuesto" de cada modelo
