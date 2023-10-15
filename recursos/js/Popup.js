@@ -109,9 +109,7 @@ export default class Popup {
         // Retornamos el template con sus datos
         return (
             /* html */
-            `<dialog class="popup" 
-            aria-labelledby="Pedir presupuesto"
-            aria-describedby="Formulario de presupuesto">
+            `<dialog class="popup">
                 <div class="popup__top-bar">
                     <button class="popup__btn-cerrar" id="btn-cerrar-popup">
                         <img
@@ -155,6 +153,7 @@ export default class Popup {
                             ></textarea>
                             <button class="boton-oscuro" type="submit">Presupuestar</button>
                         </form>
+                    </div>
                 </div>
             </dialog>
         `

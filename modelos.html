@@ -18,7 +18,7 @@
         />
         <link rel="stylesheet" href="./recursos/css/principal.css" />
         <!-- script SPA solo en modelos.html -->
-        <script type="module" src="./recursos/js/app.js"></script>
+        <script type="module" src="./recursos/js/principal.js"></script>
         <title>Copan | Retiro Sustentable</title>
     </head>
     <body>
@@ -51,11 +51,10 @@
                 única en la naturaleza.
             </p>
             <form class="modelos-filtro" id="id-modelos-filtro">
-                <label for="id-dormitorios"
-                    >Dormitorios
+                <label for="id-dormitorios">
+                    Dormitorios
                     <select
                         name="dormitorios"
-                        data-filtro="dorm"
                         id="id-dormitorios"
                     >
                         <option value="0">todos</option>
@@ -65,20 +64,25 @@
                         <option value="4">4</option>
                     </select>
                 </label>
-                <label for="id-dormitorios"
-                    >max
+                <label for="id-rango-m2">
+                    max
                     <input
                         id="id-rango-m2"
                         name="m2"
-                        data-filtro="m2"
                         type="range"
                         step="5"
                         min="40"
                         max="100"
                         value="100"
-                    /><output class="modelos-filtro__info-m2" id="id-max-m2" for="id-rango-m2" form="id-modelos-filtro"
-                        >100</output
-                    >M2
+                    />
+                    <output
+                        class="modelos-filtro__info-m2"
+                        id="id-max-m2"
+                        for="id-rango-m2"
+                        form="id-modelos-filtro"
+                        >
+                        100
+                    </output>M2
                 </label>
                 <button class="boton-oscuro" id="id-filtrar">
                     <img src="./recursos/imagenes/filtro.svg" /> Filtrar
@@ -389,7 +393,11 @@
                     </div>
                 </article>
             </div>
-            <div class="popup-overlay" id="popup-caracteristicas" aria-live="polite"></div>
+            <div
+                class="popup-overlay"
+                id="popup-caracteristicas"
+                aria-live="polite"
+            ></div>
             <div class="main-space" aria-hidden="true"></div>
         </main>
         <!-- pie -->
