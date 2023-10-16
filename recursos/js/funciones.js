@@ -43,10 +43,8 @@ export const eventoBotonesPresupuesto = (popup, datosCaract, modelos) => {
 
     // se palican escuchadores a los botones
     btnsPresupuesto.forEach((btn) => {
-
         // Recorrer todos los botones y asignarles un escuchador
         btn.addEventListener("click", async () => {
-
             // obtiene ID del modelo desde stributo "data-mid"
             const idModelo = btn.dataset.mid;
 
@@ -59,5 +57,25 @@ export const eventoBotonesPresupuesto = (popup, datosCaract, modelos) => {
             popup.abrirPopup(datosCaract, datosModelo);
         });
     });
-
+};
+/**
+ *
+ * @param {Object} modelo
+ * @param {HTMLElement} cantDormi
+ * @param {HTMLElement} rangoM2
+ */
+export const filtro = (modelos, campos) => {
+    return modelos.filter((modelo) => {
+        /* 
+        separamos en dos las evaluaciones
+        y utilizamos un operador ternario
+        */
+        // Condicion:
+        return campos.cantDormi.value > 0
+            ? // si hay cantidad de dormitorios, evaluamos los dos
+              modelo.dormi == Number(campos.cantDormi.value) &&
+                  modelo.m2 <= Number(campos.rangoM2.value)
+            : // si no hay datos de dormitorios, solamente evaluamos los m2
+              modelo.m2 <= Number(campos.rangoM2.value);
+    });
 };

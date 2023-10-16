@@ -1,4 +1,4 @@
-import { render, fetchData, eventoBotonesPresupuesto } from "./funciones.js";
+import { render, fetchData, filtro, eventoBotonesPresupuesto } from "./funciones.js";
 import Popup from "./Popup.js";
 import platillaModelos from "./platillaModelos.js";
 
@@ -26,7 +26,7 @@ async function iniciarApp() {
     // e implementamos una estrategia de caché:
 
     // Para modelos
-    if (!modelos) {
+    if (!sessionStorage.getItem("modelos")) {
         // cargamos los modelos
         modelos = await fetchData(urlModelos);
         sessionStorage.setItem("modelos", JSON.stringify(modelos));
@@ -35,7 +35,7 @@ async function iniciarApp() {
     }
 
     // Para características
-    if (!caracteristicas) {
+    if (!sessionStorage.getItem("caracteristicas")) {
         // cargamos los modelos
         caracteristicas = await fetchData(urlCaracteristicas);
         sessionStorage.setItem(
@@ -93,28 +93,9 @@ async function iniciarApp() {
             */
             if (modelos) {
                 // array.filter() -> devuelve solo los elementos que cumplen la condición verdadera
-                modelosFiltrados = modelos.filter((modelo) => {
-                    /* 
-                    separamos en dos las evaluaciones
-                    y utilizamos un operador ternario
-                    */
-                    // Condicion:
-                    return cantDormi.value > 0
-                        ? // si hay cantidad de dormitorios, evaluamos los dos
-                          modelo.dormi == Number(cantDormi.value) &&
-                              modelo.m2 <= Number(rangoM2.value)
-                        : // si no hay datos de dormitorios, solamente evaluamos los m2
-                          modelo.m2 <= Number(rangoM2.value);
-                    /*
-                    es lo mismo que decir:
-
-                    if(cantDormi.value > 0){
-                        return modelo.dormi == Number(cantDormi.value) && modelo.m2 <= Number(rangoM2.value)
-                    }else{
-                        return modelo.m2 <= Number(rangoM2.value)
-                    }
-                    
-                    */
+                modelosFiltrados = modelosFiltrados = filtro(modelos, {
+                    cantDormi,
+                    rangoM2,
                 });
             } else {
                 // si no, filtrados tiene todos los datos
@@ -145,6 +126,9 @@ async function iniciarApp() {
         // Leyenda del boton
         btnFiltrar.innerHTML = btnFiltrarLeyenda;
     });
+
+    // Renderizamos la primera vez
+    render(app, modelos, platillaModelos);
 
     // asignamo evento al boton "Presupuesto" de cada modelo
     eventoBotonesPresupuesto(popup, caracteristicas, modelosFiltrados);
