@@ -1,4 +1,9 @@
-import { render, fetchData, filtro, eventoBotonesPresupuesto } from "./funciones.js";
+import {
+    render,
+    fetchDatos,
+    filtro,
+    eventoBotonesPresupuesto,
+} from "./funciones.js";
 import Popup from "./Popup.js";
 import platillaModelos from "./platillaModelos.js";
 
@@ -6,6 +11,12 @@ import platillaModelos from "./platillaModelos.js";
 async function iniciarApp() {
     // Elemento app CSR
     const app = document.getElementById("modelos-app");
+
+    // Elemento HTML que va a contener el popup
+    const elementoPopup = document.getElementById("popup-presupuesto");
+
+    // Instanciamos clase popup
+    const popup = new Popup(elementoPopup);
 
     /*
     creamos una variable que va a almacenar los modelos
@@ -16,19 +27,13 @@ async function iniciarApp() {
     let caracteristicas;
     const urlCaracteristicas = "./recursos/datos/caracteristicas.json";
 
-    // Elemento HTML que va a contener el popup
-    const elementoPopup = document.getElementById("popup-caracteristicas");
-
-    // Instanciamos clase popup
-    const popup = new Popup(elementoPopup);
-
     // verificar si ya están cargados los datos de la API
     // e implementamos una estrategia de caché:
 
     // Para modelos
     if (!sessionStorage.getItem("modelos")) {
         // cargamos los modelos
-        modelos = await fetchData(urlModelos);
+        modelos = await fetchDatos(urlModelos);
         sessionStorage.setItem("modelos", JSON.stringify(modelos));
     } else {
         modelos = JSON.parse(sessionStorage.getItem("modelos"));
@@ -120,8 +125,8 @@ async function iniciarApp() {
         rangoInfo.textContent = rangoM2.max;
         render(app, modelos, platillaModelos);
 
-        // Cada vez que filtramos debemos volver a asignar eventos
-        eventoBotonesPresupuesto(popup, caracteristicas, modelosFiltrados);
+        // Cada vez que limpiamos debemos volver a asignar eventos
+        eventoBotonesPresupuesto(popup, caracteristicas, modelos);
 
         // Leyenda del boton
         btnFiltrar.innerHTML = btnFiltrarLeyenda;
@@ -130,8 +135,8 @@ async function iniciarApp() {
     // Renderizamos la primera vez
     render(app, modelos, platillaModelos);
 
-    // asignamo evento al boton "Presupuesto" de cada modelo
-    eventoBotonesPresupuesto(popup, caracteristicas, modelosFiltrados);
+    // asignamos evento al boton "Presupuesto" de cada modelo
+    eventoBotonesPresupuesto(popup, caracteristicas, modelos);
 }
 
 // Invocamos init

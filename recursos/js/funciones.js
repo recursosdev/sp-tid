@@ -7,7 +7,7 @@ debe ser asíncronaya que trabaja con promesas
  * @param {string} url
  * @returns {json}
  */
-export const fetchData = async (url) => {
+export const fetchDatos = async (url) => {
     const data = await fetch(url);
     return data.json();
 };
@@ -22,13 +22,13 @@ ver modulo -> templateInfo
  * @param {Array} modelos
  * @param {string} template
  */
-export const render = (app, modelos, template) => {
+export const render = (app, modelos, pantilla) => {
     app.innerHTML = "";
     // recorre el arreglo
     modelos.forEach((modelo, i) => {
         // El parámetro i (index) se utiliza solamente para pintar el fondo alternadamente
         // ver -> platillaModelos.js
-        app.innerHTML += template(modelo, i);
+        app.innerHTML += pantilla(modelo, i);
     });
 };
 /**
@@ -41,10 +41,11 @@ export const eventoBotonesPresupuesto = (popup, datosCaract, modelos) => {
     // Se obtienen todos los botones
     const btnsPresupuesto = document.querySelectorAll("[data-mid]");
 
-    // se palican escuchadores a los botones
+    // recorremos el Array de botones
     btnsPresupuesto.forEach((btn) => {
+        
         // Recorrer todos los botones y asignarles un escuchador
-        btn.addEventListener("click", async () => {
+        btn.addEventListener("click", () => {
             // obtiene ID del modelo desde stributo "data-mid"
             const idModelo = btn.dataset.mid;
 

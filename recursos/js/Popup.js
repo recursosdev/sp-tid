@@ -3,10 +3,10 @@
  * gestiona el Popup
  */
 export default class Popup {
-    constructor(popup) {
+    constructor(elementoPopup) {
 
         // Elemento HTML popup
-        this.popup = popup;
+        this.elementoPopup = elementoPopup;
 
         // Tipos mensajes
         this.tipoMensaje = {
@@ -27,13 +27,13 @@ export default class Popup {
     }
     abrirPopup(datosCaract, datosModelo) {
         // Mostramos el elemento que envuelve el popup
-        this.popup.style.display = "flex";
+        this.elementoPopup.style.display = "flex";
 
         // Variable que almacenará el temporizador
         let timeoutId;
 
         // Creamos el HTML a partir de un template y pasamos el modelo seleccionado
-        this.popup.innerHTML = this.templateFormulario(
+        this.elementoPopup.innerHTML = this.plantillaFormulario(
             datosCaract,
             datosModelo,
         );
@@ -80,9 +80,9 @@ export default class Popup {
     }
     cerrarPopup() {
         // Ocultamos el elemento que envuelve el popup
-        this.popup.style.display = "none";
+        this.elementoPopup.style.display = "none";
         // vacía HTML del formulario en el popup
-        this.popup.innerHTML = "";
+        this.elementoPopup.innerHTML = "";
     }
     mensaje(tipo){
         return `<p class="popup__mensaje-enviado">
@@ -91,7 +91,7 @@ export default class Popup {
             <small>La ventana se cerrará automáticamente en 10seg</small>
         </p>`;
     }
-    templateFormulario(datosCaract, datosModelo) {
+    plantillaFormulario(datosCaract, datosModelo) {
         // Desestructuramos el nombre del modelo
         const { nombre } = datosModelo;
 
@@ -110,7 +110,7 @@ export default class Popup {
         return (
             /* html */
             `<dialog class="popup">
-                <div class="popup__top-bar">
+                <div class="popup__barra-arriba">
                     <button class="popup__btn-cerrar" id="btn-cerrar-popup">
                         <img
                             src="./recursos/imagenes/cerrar.svg"

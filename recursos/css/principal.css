@@ -681,7 +681,7 @@ body {
 /* Popup *********************************** */
 /* ----------------------------------------- */
 
-.popup-overlay {
+.popup-capa {
     position: fixed;
     top: 0;
     left: 0;
@@ -715,7 +715,7 @@ body {
 
     background-color: var(--color-oscuro2);
 }
-.popup__top-bar {
+.popup__barra-arriba {
     display: flex;
     justify-content: flex-end;
     align-items: center;
