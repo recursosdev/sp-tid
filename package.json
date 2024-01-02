@@ -1,14 +1,19 @@
 {
   "name": "sp-tid",
   "version": "1.0.0",
-  "description": "Desarrollo Aplicación Web Ejemplo AW1",
+  "description": "Desarrollo Aplicación Web 1 Ejemplo AW1 (Extendido)",
   "main": "index.js",
   "scripts": {
-    "start": "five-server"
+    "start": "five-server",
+    "test": "five-server"
   },
   "author": "Andrés Senn",
   "license": "MIT",
+  "repository": {
+    "github": "https://github.com/recursosdev/sp-tid"
+  },
   "devDependencies": {
-    "five-server": "^0.3.1"
+    "five-server": "^0.3.1",
+    "jest": "^29.7.0"
   }
 }

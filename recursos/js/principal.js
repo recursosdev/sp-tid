@@ -3,17 +3,17 @@ import {
     fetchDatos,
     filtro,
     eventoBotonesPresupuesto,
-} from "./funciones.js";
-import Popup from "./Popup.js";
-import platillaModelos from "./platillaModelos.js";
+} from './funciones.js';
+import Popup from './Popup.js';
+import platillaModelos from './platillaModelos.js';
 
 // inicializamos la app
 async function iniciarApp() {
     // Elemento app CSR
-    const app = document.getElementById("modelos-app");
+    const app = document.getElementById('modelos-app');
 
     // Elemento HTML que va a contener el popup
-    const elementoPopup = document.getElementById("popup-presupuesto");
+    const elementoPopup = document.getElementById('popup-presupuesto');
 
     // Instanciamos clase popup
     const popup = new Popup(elementoPopup);
@@ -23,32 +23,32 @@ async function iniciarApp() {
     y características desde API
     */
     let modelos;
-    const urlModelos = "./recursos/datos/modelos.json";
+    const urlModelos = './recursos/datos/modelos.json';
     let caracteristicas;
-    const urlCaracteristicas = "./recursos/datos/caracteristicas.json";
+    const urlCaracteristicas = './recursos/datos/caracteristicas.json';
 
     // verificar si ya están cargados los datos de la API
     // e implementamos una estrategia de caché:
 
     // Para modelos
-    if (!sessionStorage.getItem("modelos")) {
+    if (!sessionStorage.getItem('modelos')) {
         // cargamos los modelos
         modelos = await fetchDatos(urlModelos);
-        sessionStorage.setItem("modelos", JSON.stringify(modelos));
+        sessionStorage.setItem('modelos', JSON.stringify(modelos));
     } else {
-        modelos = JSON.parse(sessionStorage.getItem("modelos"));
+        modelos = JSON.parse(sessionStorage.getItem('modelos'));
     }
 
     // Para características
-    if (!sessionStorage.getItem("caracteristicas")) {
+    if (!sessionStorage.getItem('caracteristicas')) {
         // cargamos los modelos
-        caracteristicas = await fetchData(urlCaracteristicas);
+        caracteristicas = await fetchDatos(urlCaracteristicas);
         sessionStorage.setItem(
-            "caracteristicas",
+            'caracteristicas',
             JSON.stringify(caracteristicas),
         );
     } else {
-        caracteristicas = JSON.parse(sessionStorage.getItem("caracteristicas"));
+        caracteristicas = JSON.parse(sessionStorage.getItem('caracteristicas'));
     }
 
     /*
@@ -58,35 +58,35 @@ async function iniciarApp() {
     let modelosFiltrados = modelos;
 
     // Componente interactivo select cantidad dormitorios
-    const cantDormi = document.getElementById("id-dormitorios");
+    const cantDormi = document.getElementById('id-dormitorios');
 
     // Componente interactivo input type=range metros cuadrados
-    const rangoM2 = document.getElementById("id-rango-m2");
+    const rangoM2 = document.getElementById('id-rango-m2');
 
     // Elemento muestra los m2
-    const rangoInfo = document.getElementById("id-max-m2");
+    const rangoInfo = document.getElementById('id-max-m2');
 
     // Formulario del filtro
-    const formFiltro = document.getElementById("id-modelos-filtro");
+    const formFiltro = document.getElementById('id-modelos-filtro');
 
     // boton filtrar
-    const btnFiltrar = document.getElementById("id-filtrar");
+    const btnFiltrar = document.getElementById('id-filtrar');
     // Se guarda el contenido del boton para luego modificarlo
     // y tener un estado previo a la modificación
     const btnFiltrarLeyenda = btnFiltrar.innerHTML;
 
     // Boton limpiar formulario
-    const btnLimpiar = document.getElementById("id-limpiar");
+    const btnLimpiar = document.getElementById('id-limpiar');
 
     // EVENTOS ---------------------------------------------------
 
     // Asignamos evento al range
-    rangoM2.addEventListener("input", (evento) => {
+    rangoM2.addEventListener('input', (evento) => {
         rangoInfo.textContent = evento.target.value;
     });
 
     // Asignamos un escuchador de eventos al formulario filtro
-    formFiltro.addEventListener("submit", (evento) => {
+    formFiltro.addEventListener('submit', (evento) => {
         // Se previene el funcionamiento por defecto del formulario
         evento.preventDefault();
 
@@ -120,7 +120,7 @@ async function iniciarApp() {
     });
 
     // Asignamos escuchador al boton limpiar
-    btnLimpiar.addEventListener("click", () => {
+    btnLimpiar.addEventListener('click', () => {
         // Reseteamos los m2
         rangoInfo.textContent = rangoM2.max;
         render(app, modelos, platillaModelos);
